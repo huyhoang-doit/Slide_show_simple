@@ -19,12 +19,12 @@ function updateImageByIndex(index) {
 
 listImages.forEach((imgElement, index) => {
   imgElement.addEventListener("click", (e) => {
-    imgFeature.style.opacity = "0";
+    imgFeature.style.animation = "";
     // animation
     setTimeout(() => {
+      imgFeature.style.animation = "fadeIn 1.5s ease-in-out forwards";
       updateImageByIndex(index);
-      imgFeature.style.opacity = "1";
-    }, 400);
+    }, 500);
   });
 });
 
@@ -38,8 +38,8 @@ prevBtn.addEventListener("click", (e) => {
 
   setTimeout(() => {
     updateImageByIndex(currentIndex);
-    imgFeature.style.animation = "slideLeft 0.5s ease-in-out forwards";
-  }, 400);
+    imgFeature.style.animation = "slideRight 0.5s ease-in-out forwards";
+  }, 500);
 });
 
 nextBtn.addEventListener("click", (e) => {
@@ -52,8 +52,8 @@ nextBtn.addEventListener("click", (e) => {
   }
   setTimeout(() => {
     updateImageByIndex(currentIndex);
-    imgFeature.style.animation = "slideRight 0.5s ease-in-out forwards";
-  }, 400);
+    imgFeature.style.animation = "slideLeft 0.5s ease-in-out forwards";
+  }, 500);
 });
 
 updateImageByIndex(currentIndex);
